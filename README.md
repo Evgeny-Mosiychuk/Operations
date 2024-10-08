@@ -35,7 +35,7 @@
 
 ## Сборка докер образа
 
-docker build -t paysonix:latest .
+docker build -t paysonix:latest
 
 ## Запуск контейнера
 
