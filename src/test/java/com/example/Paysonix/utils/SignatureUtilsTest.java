@@ -48,6 +48,6 @@ public class SignatureUtilsTest {
 
         String result = SignatureUtils.createDataToSign(params);
 
-        assertThat(result).isEqualTo("name1=value1&special&name2 =special=value2");
+        assertThat(result).isEqualTo("name1=value1&special&name2=special=value2");
     }
 }
