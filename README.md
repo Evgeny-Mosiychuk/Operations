@@ -32,11 +32,10 @@
     java -jar target/Paysonix-0.0.1-SNAPSHOT.jar
     ```
 
-
-## Сборка докер образа
+## Building a docker image
 
 docker build -t paysonix:latest
 
-## Запуск контейнера
+## Launching a container
 
 docker run --rm -p 8080:8080 paysonix:latest
