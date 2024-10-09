@@ -27,7 +27,7 @@ public class OperationControllerTest extends AbstractTest {
         mvc.perform(createPostRequest(url, operationId))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.status").value("error"))
-                .andExpect(jsonPath("$.message").value("All parameters must be present and non-empty"));
+                .andExpect(jsonPath("$.message").value("handleRequest.params: All parameters must be present and non-empty"));
     }
 
     @Test
@@ -37,7 +37,7 @@ public class OperationControllerTest extends AbstractTest {
                         .param("name2", ""))
                 .andExpect(status().isBadRequest())
                 .andExpect(jsonPath("$.status").value("error"))
-                .andExpect(jsonPath("$.message").value("All parameters must be present and non-empty"));
+                .andExpect(jsonPath("$.message").value("handleRequest.params: All parameters must be present and non-empty"));
     }
     @Test
     public void testHandleRequestWithWrongToken() throws Exception {
