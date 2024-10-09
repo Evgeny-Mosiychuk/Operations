@@ -1,17 +1,17 @@
 package com.example.Paysonix.util;
 
+import com.google.common.base.Joiner;
+
 import java.util.Map;
+import java.util.TreeMap;
 
 public class SignatureUtils {
 
     public static String createDataToSign(Map<String, String> params) {
-        StringBuilder dataToSign = new StringBuilder();
-        params.entrySet().stream()
-                .sorted(Map.Entry.comparingByKey())
-                .forEach(entry -> dataToSign.append(entry.getKey()).append("=").append(entry.getValue()).append("&"));
+        Map<String, String> sortedParams = new TreeMap<>(params);
 
-        if (dataToSign.length() > 0)
-            dataToSign.setLength(dataToSign.length() - 1);
-        return dataToSign.toString();
+        return Joiner.on("&")
+                .withKeyValueSeparator("=")
+                .join(sortedParams);
     }
 }
